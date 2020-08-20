@@ -14,10 +14,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3vh 8vw;
+    padding: 2em 4em;
     color: black;
     border-bottom: 1px solid #eeeeee;
     width: 100vw;
+    max-width: 100%;
 }
 
 .nav-links ul {
@@ -49,44 +50,52 @@ body {
     font-weight: 550;
     text-decoration: none;
     transition-duration: 200ms;
-    transition-property: color;
+    transition-property: color, background-color;
+    border-radius: 50px;
+    padding: 0.8em;
 }
 
 .learn-more:hover {
-    color: #cccccc;
+    color: #ffffff;
+    background-color: #695bd8;
 }
 
-.message-container {
-    padding: 10vh 8vw;
+.body-container {
+    padding: 4em 6em;
     font-size: 1.5rem;
+    text-align: center;
+    width: 100vw;
+    max-width: 100%;
 }
 
-.message-container h2 {
+.body-container h2 {
     font-weight: 600;
 }
 
-.message-container h3 {
-    margin-top: 1vh;
+.body-container h3 {
+    margin-top: 1.25em;
     font-weight: 500;
 }
 
 .button-container {
-    margin-top: 6vh;
+    margin-top: 3em;
 }
 
 .view-map {
+    display: inline-block;
     text-decoration: none;
     font-size: 1.2rem;
     color: #ffffff;
     background-color: #000000;
     border-radius: 50px;
     padding: 0.8em;
-    margin-right: 3vw;
+    margin-right: 1em;
     transition-property: background-color;
     transition-duration: 300ms;
 }
 
 .create-post {
+    display: inline-block;
     text-decoration: none;
     font-size: 1.2rem;
     color: #000000;
@@ -106,7 +115,55 @@ body {
 }
 
 .info-container {
-    background: green;
-    height: 30vh;
+    padding: 2em 4em;
     width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.75em;
+    background: #695bd8;
+    background: -webkit-linear-gradient(top, #695bd8, #09e6c6);
+    background: -moz-linear-gradient(top, #695bd8, #09e6c6);
+    background: linear-gradient(to bottom, #695bd8, #09e6c6);
+    max-width: 100%;
+}
+
+.info-container img {
+    height: 10vh;
+    width: 10vw;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 2em;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+        0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11),
+        0 8px 16px rgba(0, 0, 0, 0.11);
+}
+
+.card h4 {
+    margin: 1.4em 0em 0.5em 0em;
+}
+
+.text-container {
+    width: 100vw;
+    padding: 4em 3em;
+    font-size: 1.5rem;
+    max-width: 100%;
+}
+
+.text-container h2 {
+    font-weight: 600;
+}
+
+.text-container h3 {
+    margin-top: 1.5em;
+    font-weight: 500;
+}
+
+.map-container {
+    height: 60vh;
+    width: 80vw;
 }
