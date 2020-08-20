@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
-const postSchema = mongoose.Schema({
+const postSchema = new mongoose.Schema({
+    id: {
+        type: String,
+        required: true,
+    },
     location: {
         type: String,
         required: true,

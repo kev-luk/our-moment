@@ -10,7 +10,15 @@ app.use(express.static(__dirname + '/Views'));
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-    res.render('main');
+    res.render('home');
+});
+
+app.get('/home', (req, res) => {
+    res.render('home');
+});
+
+app.get('/about', (req, res) => {
+    res.render('about');
 });
 
 app.use('/map', mapRouter);
