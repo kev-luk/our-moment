@@ -1,6 +1,7 @@
 const mapContainer = document.querySelector('.map-container');
 
-mapboxgl.accessToken = 'ACCESSTOKEN';
+mapboxgl.accessToken =
+    'pk.eyJ1Ijoia2V2LWx1ayIsImEiOiJja2UyenJheDMwMHlzMnhxdmdld2ppb3N3In0.6wCU8fmJdcZIpVMAhXXneA';
 
 const map = new mapboxgl.Map({
     container: mapContainer,

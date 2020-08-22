@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/home', async (req, res) => {
-    const posts = await Post.find().sort({ createdAt: 'descending' }).limit(5);
+    const posts = await Post.find().sort({ createdAt: 'descending' }).limit(4);
     res.render('home', { posts: posts });
 });
 

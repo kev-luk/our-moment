@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Rubik', sans-serif;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
 }
 
 .home-container {
@@ -67,7 +67,7 @@ body {
 
 .body-container {
     text-align: left;
-    padding: 4em 4em;
+    padding: 4em;
     font-size: 1.5rem;
     width: 100vw;
     max-width: 100%;
@@ -152,6 +152,53 @@ body {
     margin: 1.4em 0em 0.5em 0em;
 }
 
+.post-container {
+    background-color: #f7f7f7;
+    padding: 4em;
+    font-size: 1.5rem;
+    width: 100vw;
+    max-width: 100%;
+}
+
+.post-container h2 {
+    font-weight: 600;
+}
+
+.post-container h3 {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    font-weight: 500;
+}
+
+.recent-posts {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2em;
+    row-gap: 2em;
+}
+
+.recent-post-card {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.recent-post-card h4 {
+    font-weight: 600;
+    margin-bottom: 0.25em;
+    color: #695bd8;
+}
+
+.recent-post-card h5 {
+    font-weight: 500;
+    opacity: 0.3;
+    margin-bottom: 0.25em;
+}
+
+.recent-post-card p {
+    font-size: 1.25rem;
+}
+
 .text-container {
     text-align: center;
     width: 100vw;
@@ -203,7 +250,7 @@ body {
     font-size: 1.5rem;
     width: 100vw;
     max-width: 100%;
-    background-color: #f0f0f0;
+    background-color: #f7f7f7;
 }
 
 .purpose-text {
@@ -214,7 +261,7 @@ body {
 .purpose-link {
     text-decoration: none;
     display: inline-block;
-    margin-top: 1.2em;
+    margin-top: 1.25em;
     color: #0095ff;
     transition-property: opacity;
     transition-duration: 200ms;
