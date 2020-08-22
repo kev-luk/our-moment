@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const mapRouter = require('./Routes/map');
+const Post = require('./Models/Post');
 const PORT = process.env.PORT || 3000;
 const url = process.env.MongoURI;
 
@@ -20,15 +21,20 @@ app.use(express.static(__dirname + '/Views'));
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-    res.render('home');
+    res.redirect('home');
 });
 
-app.get('/home', (req, res) => {
-    res.render('home');
+app.get('/home', async (req, res) => {
+    const posts = await Post.find().sort({ createdAt: 'descending' }).limit(5);
+    res.render('home', { posts: posts });
 });
 
 app.get('/about', (req, res) => {
     res.render('about');
+});
+
+app.get('/learn-more', (req, res) => {
+    res.render('learn');
 });
 
 app.use('/map', mapRouter);

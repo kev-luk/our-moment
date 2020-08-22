@@ -1,4 +1,5 @@
-# world-thoughts
-See what everyone else is saying around the world
+# OurMoment
+
+See what everyone else is saying around you
 
 Creating using MapBox
