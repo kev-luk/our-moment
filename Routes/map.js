@@ -7,13 +7,12 @@ router.get('/', (req, res) => {
 });
 
 router.get('/post', (req, res) => {
-    res.render('map/post');
+    res.render('map/post', { post: new Post() });
 });
 
 router.post('/', async (req, res) => {
     let post = new Post({
         title: req.body.title,
-        location: req.body.latitude,
         description: req.body.description,
         message: req.body.message,
     });

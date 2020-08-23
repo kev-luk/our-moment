@@ -253,6 +253,10 @@ body {
     background-color: #f7f7f7;
 }
 
+.purpose-container h2 {
+    font-weight: 600;
+}
+
 .purpose-text {
     margin-top: 1.2em;
     line-height: 1.5;
@@ -304,7 +308,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10vh;
+    padding: 3em;
 }
 
 .form-container {
@@ -314,7 +318,7 @@ body {
     row-gap: 1em;
     column-gap: 1em;
     padding: 4em;
-    width: 80vh;
+    width: 70vw;
     max-width: 100%;
     background-color: #ffffff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
@@ -378,4 +382,28 @@ body {
 
 .submit-post:hover {
     opacity: 0.7;
+}
+
+.purpose-container.learn {
+    background-color: #ffffff;
+}
+
+.contact-container {
+    padding: 4em;
+    font-size: 1.5rem;
+    width: 100vw;
+    max-width: 100%;
+    background-color: #f7f7f7;
+}
+
+.contact-container h2 {
+    font-weight: 600;
+    text-align: center;
+    color: #695bd8;
+}
+
+.contact-text {
+    margin-top: 1.2em;
+    line-height: 1.5;
+    text-align: center;
 }

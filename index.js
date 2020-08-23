@@ -2,6 +2,7 @@ if (process.env.NODE_ENV != 'production') {
     require('dotenv').config();
 }
 
+const path = require('path');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -15,6 +16,7 @@ mongoose
     .then(() => console.log('Connected to MongoDB...'))
     .catch((err) => console.log(err));
 
+// app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/Views'));
