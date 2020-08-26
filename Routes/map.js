@@ -1,13 +1,14 @@
 const express = require('express');
-const Post = require('../Models/Post');
+const Post = require('../models/Post');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.render('map/map');
+router.get('/', async (req, res) => {
+    const posts = await Post.find();
+    res.render('map', { posts: posts });
 });
 
 router.get('/post', (req, res) => {
-    res.render('map/post', { post: new Post() });
+    res.render('post', { post: new Post() });
 });
 
 router.post('/', async (req, res) => {

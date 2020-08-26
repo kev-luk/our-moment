@@ -49,6 +49,9 @@
                 <% posts.forEach(post => { %>
                 <div class="recent-post-card">
                     <h4><%= post.title %></h4>
+                    <% if(post.description != "") { %>
+                    <h5><%= post.description %></h5>
+                    <% } %>
                     <h5><%= post.createdAt.toLocaleDateString() %></h5>
                     <p>
                         <%= post.message %>

@@ -11,7 +11,7 @@
         <title>Map</title>
     </head>
     <body>
-        <%- include('../_nav_bar') %>
+        <%- include('_nav_bar') %>
         <div class="create-post-container">
             <h1>Post to the Map</h1>
             <a href="/map/post" class="create-post">Create Post</a>
@@ -19,22 +19,5 @@
         <div class="container">
             <div class="map-container"></div>
         </div>
-        <script>
-            const mapContainer = document.querySelector('.map-container');
-
-            mapboxgl.accessToken =
-                'pk.eyJ1Ijoia2V2LWx1ayIsImEiOiJja2UyenJheDMwMHlzMnhxdmdld2ppb3N3In0.6wCU8fmJdcZIpVMAhXXneA';
-
-            const map = new mapboxgl.Map({
-                container: mapContainer,
-                style: 'mapbox://styles/mapbox/streets-v11',
-                center: [0, 2.842170943040401e-14],
-                zoom: 1,
-            });
-
-            let marker = new mapboxgl.Marker()
-                .setLngLat([30.5, 50.5])
-                .addTo(map); // add the marker to the map
-        </script>
     </body>
 </html>

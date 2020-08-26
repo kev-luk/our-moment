@@ -3,11 +3,12 @@ if (process.env.NODE_ENV != 'production') {
 }
 
 const path = require('path');
+const cors = require('cors');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const mapRouter = require('./Routes/map');
-const Post = require('./Models/Post');
+const mapRouter = require('./routes/map');
+const Post = require('./models/Post');
 const PORT = process.env.PORT || 3000;
 const url = process.env.MongoURI;
 
@@ -16,10 +17,12 @@ mongoose
     .then(() => console.log('Connected to MongoDB...'))
     .catch((err) => console.log(err));
 
-// app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/views'));
 
-app.use(express.static(__dirname + '/Views'));
+app.use(cors());
+
+app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
