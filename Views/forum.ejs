@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <title>Map</title>
+</head>
+
+<body>
+    <%- include('_nav_bar') %>
+        <div class="create-post-container">
+            <h1>OurMoment Forum</h1>
+            <p>
+                Add your own post or take a look at past posts that have been made to the forum.
+            </p>
+            <a href="/forum/post" class="create-post">Create Post</a>
+        </div>
+        <div class="forum-post-container">
+            <% posts.forEach(post=> { %>
+                <div class="forum-post-card">
+                    <h4>
+                        <%= post.title %>
+                    </h4>
+                    <% if(post.location !="" ) { %>
+                        <h5>
+                            <%= post.location %>
+                        </h5>
+                        <% } %>
+                            <% if(post.description !="" ) { %>
+                                <h5>
+                                    <%= post.description %>
+                                </h5>
+                                <% } %>
+                                    <h6>
+                                        <%= post.createdAt.toLocaleTimeString([], {hour: '2-digit' , minute:'2-digit'})
+                                            %>
+                                            &bull;
+                                            <%= post.createdAt.toLocaleDateString() %>
+                                    </h6>
+                                    <p>
+                                        <%= post.message %>
+                                    </p>
+                </div>
+                <% }) %>
+        </div>
+</body>
+
+</html>

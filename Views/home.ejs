@@ -1,18 +1,20 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/style.css" />
-        <title>Home</title>
-    </head>
-    <body>
-        <%- include('_nav_bar') %>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Home</title>
+</head>
+
+<body>
+    <%- include('_nav_bar') %>
         <div class="body-container">
             <h2>Explore the World</h2>
             <h3>Update or check out moments around the world</h3>
             <div class="button-container">
-                <a href="/map" class="view-map">View Map</a>
-                <a href="/map/post" class="create-post">Create Post</a>
+                <a href="/map" class="view-map">View Posts</a>
+                <a href="/forum/post" class="create-post">Create Post</a>
             </div>
         </div>
 
@@ -43,21 +45,29 @@
         <div class="post-container">
             <h2>Recent Posts</h2>
             <h3>
-                Check out some of the recent posts that were made to the map
+                Check out some of the recent posts that were made to the forum.
             </h3>
             <div class="recent-posts">
-                <% posts.forEach(post => { %>
-                <div class="recent-post-card">
-                    <h4><%= post.title %></h4>
-                    <% if(post.description != "") { %>
-                    <h5><%= post.description %></h5>
-                    <% } %>
-                    <h5><%= post.createdAt.toLocaleDateString() %></h5>
-                    <p>
-                        <%= post.message %>
-                    </p>
-                </div>
-                <% }) %>
+                <% posts.forEach(post=> { %>
+                    <div class="recent-post-card">
+                        <h4>
+                            <%= post.title %>
+                        </h4>
+                        <% if(post.description !="" ) { %>
+                            <h5>
+                                <%= post.description %>
+                            </h5>
+                            <% } %>
+                                <h6>
+                                    <%= post.createdAt.toLocaleTimeString([], {hour: '2-digit' , minute:'2-digit'}) %>
+                                        &bull;
+                                        <%= post.createdAt.toLocaleDateString() %>
+                                </h6>
+                                <p>
+                                    <%= post.message %>
+                                </p>
+                    </div>
+                    <% }) %>
             </div>
         </div>
 
@@ -74,10 +84,7 @@
                     <h4>News</h4>
                 </div>
                 <div class="icon">
-                    <img
-                        src="./img/undraw_social_interaction_cy9i.svg"
-                        alt=""
-                    />
+                    <img src="./img/undraw_social_interaction_cy9i.svg" alt="" />
                     <h4>Social</h4>
                 </div>
                 <div class="icon">
@@ -90,17 +97,16 @@
         <div class="purpose-container">
             <h2>Purpose</h2>
             <p class="purpose-text">
-                Privacy is a priority. We want people to be able to share their
-                experiences with others while being able to remain anonymous and
-                protect their identity. Each post that is placed on the map will
-                only show the nearest city that it originated from.
+                Share your thoughts, opinions, or messages with people in your area, or fro around the world. Spark a
+                conversations about today's most important topics and influence others.
             </p>
             <a class="purpose-link" href="/learn-more">Learn more &rarr;</a>
         </div>
 
         <div class="join-container">
             <h2>Join Us</h2>
-            <a href="/map/post" class="create-post">Create Post</a>
+            <a href="/forum/post" class="create-post">Create Post</a>
         </div>
-    </body>
+</body>
+
 </html>

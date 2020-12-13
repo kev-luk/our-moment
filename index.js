@@ -7,7 +7,7 @@ const cors = require('cors');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const mapRouter = require('./routes/map');
+const forumRouter = require('./routes/forum');
 const Post = require('./models/Post');
 const PORT = process.env.PORT || 3000;
 const url = process.env.MongoURI;
@@ -42,7 +42,7 @@ app.get('/learn-more', (req, res) => {
     res.render('learn');
 });
 
-app.use('/map', mapRouter);
+app.use('/forum', forumRouter);
 
 app.listen(PORT, (req, res) => {
     console.log('Succesfully started server...');
