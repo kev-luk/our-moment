@@ -25,7 +25,6 @@ router.post('/', async (req, res) => {
 
     try {
         post = await post.save();
-        console.log('POST SAVED');
         // res.redirect(`/map/${post.id}`);
         res.redirect('/forum')
     } catch (e) {
