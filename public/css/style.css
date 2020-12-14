@@ -154,7 +154,7 @@ body {
 }
 
 .post-container {
-    background-color: #f1f1f1;
+    background-color: #f4f4f4;
     padding: 4em;
     font-size: 1.5rem;
     width: 100vw;
@@ -192,7 +192,7 @@ body {
 
 .recent-post-card h5, .recent-post-card h6 {
     font-weight: 500;
-    opacity: 0.3;
+    color: rgba(0, 0, 0, 0.5);
     margin-bottom: 0.25em;
 }
 
@@ -251,7 +251,7 @@ body {
     font-size: 1.5rem;
     width: 100vw;
     max-width: 100%;
-    background-color: #f1f1f1;
+    background-color: #f4f4f4;
 }
 
 .purpose-container h2 {
@@ -407,7 +407,7 @@ body {
     font-size: 1.5rem;
     width: 100vw;
     max-width: 100%;
-    background-color: #f1f1f1;
+    background-color: #f4f4f4;
 }
 
 .contact-container h2 {
@@ -428,7 +428,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 3em 3em 3em 3em;
-    background-color: #f1f1f1;
+    background-color: #f4f4f4;
 }
 
 .forum-post-card {
@@ -461,4 +461,8 @@ body {
 
 .forum-post-card p {
     font-size: 1.2rem;
+}
+
+.success-message {
+    margin-bottom: 1.25em;
 }

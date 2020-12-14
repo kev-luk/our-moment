@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" href="../img/digital-marketing.png" />
+    <title>
+        <%= post.title %>
+    </title>
+</head>
+
+<body>
+    <%- include('_nav_bar') %>
+        <div class="container">
+            <h1 class="success-message">Your post has been added to the forum!</h1>
+            <div class="forum-post-card">
+                <h4>
+                    <%= post.title %>
+                </h4>
+                <% if(post.location !="" ) { %>
+                    <h5>
+                        <%= post.location %>
+                    </h5>
+                    <% } %>
+                        <% if(post.description !="" ) { %>
+                            <h5>
+                                <%= post.description %>
+                            </h5>
+                            <% } %>
+                                <h6>
+                                    <%= post.createdAt.toLocaleTimeString([], {hour: '2-digit' , minute:'2-digit'}) %>
+                                        &bull;
+                                        <%= post.createdAt.toLocaleDateString() %>
+                                </h6>
+                                <p>
+                                    <%= post.message %>
+                                </p>
+            </div>
+            <a href="/forum" class="create-post">Return to Forum</a>
+        </div>
+</body>
+
+</html>
